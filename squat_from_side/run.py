@@ -13,6 +13,7 @@ import exercise_config
 import analysis_module
 import tts
 from core.pose_engine import PoseEngine
+from core.pose_backends import create_backend
 from session_runner import SessionRunner
 from display import Display
 
@@ -26,7 +27,7 @@ def main():
         window_name=config.get("name", "QT Exercise"),
         exercise_secs=config.get("session_duration_secs", 60),
     )
-    engine = PoseEngine()
+    engine = PoseEngine(backend=create_backend(config))
 
     _frame_q: queue.Queue = queue.Queue(maxsize=1)
 
