@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# Check that a movement folder argument was provided
+if [ -z "$1" ]; then
+    echo "Usage: $0 <movement_folder>"
+    echo "Example: $0 hukning_fr_n_sidan"
+    exit 1
+fi
+
+MOVEMENT="$1"
+
 #Activate the environment
 source /home/qtrobot/dev/An_project/ollamaenv/bin/activate
 source /opt/ros/noetic/setup.bash
@@ -17,7 +26,6 @@ fi
 
 cd /home/qtrobot/catkin_ws/src/qt_rehab/qtrehab
 
-rosrun qt_rehab squat_from_side/run.py
-
+rosrun qt_rehab "$MOVEMENT/run.py"
 echo "Finished"
 read -p "Press Enter to close.."
