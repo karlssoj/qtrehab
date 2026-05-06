@@ -6,7 +6,7 @@ and the same analysis module interface as the physio portal's desktop app (`qt/`
 ## Prerequisites
 
 - ROS (with `rospy`, `sensor_msgs`, `cv_bridge`, `qt_robot_interface`)
-- Python 3 packages: `pip install mediapipe==0.10.9 opencv-python numpy`
+- Python 3 packages: `pip install mediapipe opencv-python numpy`
 
 ## Running an exercise
 
